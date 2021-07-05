@@ -1,0 +1,22 @@
+.EditAbout{
+	display:none;
+}
+.ShowAbout{
+	display:block;
+}
+.AddContact{
+	display:none;
+}
+.EditContact{
+	display:none;
+}
+.ListContact{
+	display:block;
+}
+.HidenElement{
+	display:none;
+	pointer-events:none;
+}
+.Portfolio{
+	display:block;
+}

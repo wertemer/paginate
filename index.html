@@ -1,0 +1,124 @@
+<html>
+	<head>
+		<title>Задачник</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="x-ua-compatible" content="IE=edge">
+		<link type='text/css' rel='stylesheet' href='css/bootstrap.min.css'>
+	</head>
+	<body>
+		<style>
+			.line {
+   				border-bottom: 1px solid #f00; /* Параметры линии */
+  			}
+		</style>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h3>Задачник</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3"></div>
+				<div class="col-md-3"></div>
+				<div class="col-md-3">
+					<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#AddTaskModal">
+						Создать задачу
+					</button>
+				</div>
+				<div class="col-md-3">
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#LoginInModal">
+						Войти
+					</button>
+				</div>
+			</div>
+			<div id="view-tasks">
+			</div>
+			<div class="row" id="Paginator">
+			</div>
+		</div>
+		<div class="modal fade" id="AddTaskModal" tabindex="-1" aria-labelledby="AddTaskModalLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-lg">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="AddTaskModalLabel">Новая задача</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+				<form id="frmAddTask" name="frmAddTask" method="POST" action="javascript:void(null);"
+					onsubmit="addtask()">
+					<div class="row">
+						<div class="col-md-6">
+							<label for="addworker">Кому назанчить:</label>
+						</div>
+						<div class="col-md-6">
+							<select name="addworker" id="addworker" class="form-control">
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<label for="addtitle">Название задачи:</label>
+						</div>
+						<div class="col-md-6">
+							<input type="text" name="addtitle" id="addtitle" class="form-control" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<label for="addtitle">Текст задачи:</label>
+						</div>
+						<div class="col-md-6">
+							<textarea name="addtext" id="addtext" class="form-control" rows="8" cols="80" required>
+							</textarea>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+						<input type="submit" class="btn btn-primary" value="Добавить"/>
+				 	</div>
+				</form>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<div class="modal fade" id="LoginInModal" tabindex="-1" aria-labelledby="LoginInModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="LoginInModalLabel">Вход</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form id="frmLogin" name="frmLogin" method="POST" action="javascript:void(null);"
+							onsubmit="logginig()">
+							<div class="row">
+								<div class="col-md-12">
+									<label for="edLogin">Логин:</label>
+									<input type="text" id="edLogin" name="edLogin" class="form-control" required>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<label for="edPassword">Пароль:</label>
+									<input type="password" id="edPassword" name="edPassword" class="form-control"
+									required>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+								<input type="submit" class="btn btn-primary" value="Войти"/>
+						 	</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/script.js?v=1"></script>
+</html>
